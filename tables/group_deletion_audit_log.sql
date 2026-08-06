@@ -1,0 +1,31 @@
+USE `spdms_lab`;
+
+-- Table structure for table `group_deletion_audit_log`
+--
+
+DROP TABLE IF EXISTS `group_deletion_audit_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `group_deletion_audit_log` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `deleted_by_role` varchar(100) NOT NULL,
+  `deleted_by_user_id` varchar(100) NOT NULL,
+  `reason` varchar(500) DEFAULT NULL,
+  `team_id` bigint NOT NULL,
+  `team_name` varchar(255) NOT NULL,
+  `timestamp` datetime(6) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `group_deletion_audit_log`
+--
+
+LOCK TABLES `group_deletion_audit_log` WRITE;
+/*!40000 ALTER TABLE `group_deletion_audit_log` DISABLE KEYS */;
+INSERT INTO `group_deletion_audit_log` VALUES (1,'ASSIGNED_FACULTY','Yobu','User initiated deletion',29,'GTA','2026-07-14 07:15:13.244766'),(2,'ADMIN','admin','User initiated deletion',22,'LESS THAN 10LAKHS','2026-07-20 15:43:40.579223'),(3,'ADMIN','admin','User initiated deletion',30,'GTA','2026-07-20 15:43:50.178150'),(4,'ADMIN','admin','User initiated deletion',7,'nanga 2 peru','2026-07-20 15:53:48.053834'),(5,'ADMIN','admin','User initiated deletion',8,'OnePiece','2026-07-20 15:53:57.079071'),(6,'ADMIN','admin','User initiated deletion',10,'Temp Verification Team','2026-07-20 15:54:03.717385'),(7,'ADMIN','admin','User initiated deletion',14,'heart pirates','2026-07-20 15:54:08.591862'),(8,'ADMIN','admin','User initiated deletion',15,'Esha Banerjee\'s Team','2026-07-20 15:54:14.165473'),(9,'ADMIN','admin','User initiated deletion',16,'0.5 - 1 LAKH','2026-07-20 15:54:19.702617'),(10,'ADMIN','admin','User initiated deletion',17,'1 - 2 LAKH','2026-07-20 15:54:45.904026'),(11,'ADMIN','admin','User initiated deletion',18,'3 - 3.5 LAKHS5','2026-07-20 15:54:52.624389'),(12,'ADMIN','admin','User initiated deletion',19,'2.5 - 3 LAKHS','2026-07-20 15:54:58.521649'),(13,'ADMIN','admin','User initiated deletion',20,'2 - 2.5 LAKHS','2026-07-20 15:55:04.134343'),(14,'ADMIN','admin','User initiated deletion',21,'3.5 - 4 LAKHS','2026-07-20 15:55:10.266349'),(15,'ADMIN','admin','User initiated deletion',23,'LESS THAN 8LAKHS','2026-07-20 15:55:15.329762'),(16,'ADMIN','admin','User initiated deletion',24,'4.5 - 5 LAKHS','2026-07-20 15:55:20.843848'),(17,'ADMIN','admin','User initiated deletion',25,'LESS THAN 9LAKHS','2026-07-20 15:55:27.420093'),(18,'ADMIN','admin','User initiated deletion',26,'LESS THAN 15LAKHS','2026-07-20 15:55:32.514263'),(19,'ADMIN','admin','User initiated deletion',27,'4 - 4.5 LAKHS','2026-07-20 15:55:38.628961'),(20,'ADMIN','admin','User initiated deletion',28,'5 - 6 LAKHS','2026-07-20 15:55:43.689749'),(21,'ADMIN','admin','User initiated deletion',49,'Stage 2 - Team A','2026-07-24 09:33:37.254601'),(22,'ADMIN','admin','User initiated deletion',52,'Stage 3 - Team D','2026-07-24 09:33:55.506973'),(23,'ADMIN','admin','User initiated deletion',51,'Stage 2 - Team D','2026-07-24 09:34:24.387558'),(24,'ADMIN','admin','User initiated deletion',50,'Stage 3 - Team A','2026-07-24 09:34:48.417808'),(25,'ADMIN','admin','User initiated deletion',44,'Stage 3 - Team B','2026-07-24 09:35:03.136694'),(26,'ADMIN','admin','User initiated deletion',38,'Stage 2 - Team B','2026-07-24 09:35:33.566514'),(27,'CC','jaga','User initiated deletion',53,'Stage 2 - Team B','2026-07-24 10:15:24.938935'),(28,'CC','jaga','User initiated deletion',54,'Stage 3 - Team B','2026-07-24 10:18:24.782349'),(29,'CC','jaga','User initiated deletion',57,'Stage 2 - Team C','2026-07-24 11:17:49.640594'),(30,'CC','jaga','User initiated deletion',55,'Stage 2 - Team A','2026-07-24 11:18:03.991996'),(31,'CC','jaga','User initiated deletion',56,'Stage 2 - Team B','2026-07-24 11:18:11.683940'),(32,'CC','jaga','User initiated deletion',59,'Stage 2 - Team E','2026-07-24 11:18:22.945348'),(33,'CC','jaga','User initiated deletion',58,'Stage 2 - Team D','2026-07-24 11:18:31.120773'),(34,'CC','jaga','User initiated deletion',60,'Stage 2 - Team F','2026-07-24 11:18:39.452188'),(35,'CC','jaga','User initiated deletion',61,'Stage 2 - Team A','2026-07-24 11:37:52.278571'),(36,'CC','jaga','User initiated deletion',62,'Stage 2 - Team B','2026-07-24 11:37:58.962505'),(37,'CC','jaga','User initiated deletion',63,'Stage 2 - Team C','2026-07-24 11:38:07.706567'),(38,'CC','jaga','User initiated deletion',64,'Stage 2 - Team D','2026-07-24 11:38:15.911647'),(39,'CC','jaga','User initiated deletion',65,'Stage 2 - Team E','2026-07-24 11:38:38.799097'),(40,'CC','jaga','User initiated deletion',66,'Stage 2 - Team F','2026-07-24 11:38:47.728208'),(41,'CC','jaga','User initiated deletion',67,'Stage 2 - Team A','2026-07-24 11:59:33.385655'),(42,'CC','jaga','User initiated deletion',68,'Stage 2 - Team B','2026-07-24 11:59:40.918666'),(43,'CC','jaga','User initiated deletion',70,'Stage 2 - Team D','2026-07-24 11:59:48.718370'),(44,'CC','jaga','User initiated deletion',69,'Stage 2 - Team C','2026-07-24 11:59:56.862033'),(45,'CC','jaga','User initiated deletion',71,'Stage 2 - Team E','2026-07-24 12:00:10.108113'),(46,'CC','jaga','User initiated deletion',72,'Stage 2 - Team F','2026-07-24 12:00:21.885855'),(47,'CC','jaga','User initiated deletion',76,'Stage 2 - Team D','2026-07-24 13:18:48.395998'),(48,'CC','jaga','User initiated deletion',77,'Stage 2 - Team E','2026-07-24 13:18:57.139132'),(49,'CC','jaga','User initiated deletion',78,'Stage 2 - Team F','2026-07-24 13:19:05.995397');
+/*!40000 ALTER TABLE `group_deletion_audit_log` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
