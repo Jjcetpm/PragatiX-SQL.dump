@@ -1,0 +1,8 @@
+USE `spdms_lab`;
+
+-- Data DML for table `badge_requests`
+LOCK TABLES `badge_requests` WRITE;
+/*!40000 ALTER TABLE `badge_requests` DISABLE KEYS */;
+INSERT INTO `badge_requests` VALUES (1,NULL,'2026-07-24 17:08:07.585957','2026-07-24 21:36:14.000097','jaga','REJECTED',1,8,47,24,NULL),(2,NULL,'2026-07-24 17:08:15.566110','2026-07-24 21:36:16.546322','jaga','REJECTED',4,8,47,24,NULL),(3,NULL,'2026-07-24 21:37:20.058016','2026-07-24 21:42:55.681816','jaga','APPROVED',4,8,47,24,'https://chatgpt.com/c/6a50f662-1cf8-83ee-beb6-c00829c5e326'),(4,NULL,'2026-08-05 12:03:17.771001','2026-08-05 12:18:26.233428','jaga','APPROVED',1,8,47,24,'https://github.com/sharugesh2303'),(5,NULL,'2026-08-05 12:04:26.467604','2026-08-05 12:18:30.134043','jaga','APPROVED',2,8,47,24,'https://github.com/sharugesh2303'),(6,NULL,'2026-08-06 10:39:07.221347',NULL,NULL,'PENDING',6,8,47,23,'https://sharugesh/2303');
+/*!40000 ALTER TABLE `badge_requests` ENABLE KEYS */;
+UNLOCK TABLES;

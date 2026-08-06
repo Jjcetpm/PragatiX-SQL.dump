@@ -1,0 +1,8 @@
+USE `spdms_lab`;
+
+-- Data DML for table `departments`
+LOCK TABLES `departments` WRITE;
+/*!40000 ALTER TABLE `departments` DISABLE KEYS */;
+INSERT INTO `departments` VALUES (8,'CSE-CS','Cyber Security','2026-07-06 16:59:24','2026-07-06 16:59:24','CSE-CS',NULL,'Cyber Security'),(13,'IT','Information Technology','2026-07-07 16:05:15','2026-07-11 09:05:31','IT',NULL,'Information Technology'),(14,'CSE','Computer Science engineering','2026-07-08 06:33:12','2026-07-11 09:05:54','CSE',NULL,'Computer Science engineering'),(15,'EEE','Electrical and electronics engineering','2026-07-10 08:27:59','2026-07-11 09:08:07','EEE',NULL,'Electrical and electronics engineering'),(16,'MECH','Mechanical engineering','2026-07-11 09:04:03','2026-07-11 09:04:03','MECH',NULL,'Mechanical engineering'),(17,'CIVIL','Civil engineering','2026-07-11 09:06:14','2026-07-11 09:06:14','CIVIL',NULL,'Civil engineering'),(18,'AERO','Aeronautical engineering','2026-07-11 09:07:45','2026-07-11 09:07:45','AERO',NULL,'Aeronautical engineering'),(19,'ECE','Electronical and communication engineering','2026-07-11 09:08:37','2026-07-11 09:08:37','ECE',NULL,'Electronical and communication engineering'),(20,'AIDS','Artificial intelligence and data science','2026-07-11 09:10:27','2026-07-11 09:10:27','AIDS',NULL,'Artificial intelligence and data science'),(21,'ENG','English','2026-07-11 11:00:12','2026-07-11 11:00:12','ENG',NULL,'English'),(22,'MBA','Business Administration','2026-07-11 18:12:27','2026-07-11 18:12:27','MBA',NULL,'Business Administration'),(30,'COD_CB488E','Test_name_725a','2026-08-03 17:14:12','2026-08-03 17:14:12','COD_CB488E','Test_description_1d9b','Test_name_725a');
+/*!40000 ALTER TABLE `departments` ENABLE KEYS */;
+UNLOCK TABLES;

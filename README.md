@@ -1,6 +1,6 @@
 # PragatiX Database SQL Dump (`spdms_lab`)
 
-This repository contains the complete MySQL database dump, schema definitions, and individual table query scripts for the **PragatiX / SPDMS Lab** database exported on **August 6, 2026**.
+This repository contains the complete MySQL database dump, schema DDL definitions, table-by-table DDL schemas, and individual table query scripts for the **PragatiX / SPDMS Lab** database exported on **August 6, 2026**.
 
 ---
 
@@ -13,19 +13,30 @@ This repository contains the complete MySQL database dump, schema definitions, a
 
 ---
 
-## 📁 Repository Structure
+## 📁 Repository Structure & DDL Schema Directories
 
 ```
-├── Dump20260806.sql          # Complete database backup (Schema + Data in 1 file)
-├── 00_ALL_TABLE_SCHEMAS.sql  # Full database DDL (CREATE TABLE scripts only)
-├── 00_ALL_TABLE_DATA.sql     # Full database DML (INSERT INTO records only)
-├── tables/                   # Directory containing 59 individual table .sql files
+├── schemas/                  # 🟢 PURE TABLE SCHEMAS (CREATE TABLE DDL for each table)
+│   ├── users.sql             # Individual CREATE TABLE script for users
+│   ├── students.sql          # Individual CREATE TABLE script for students
+│   ├── activities.sql        # Individual CREATE TABLE script for activities
+│   ├── attendance.sql        # Individual CREATE TABLE script for attendance
+│   └── ... (All 59 pure table DDL schema files)
+│
+├── data/                     # 🟡 PURE TABLE DATA (INSERT INTO DML for each table)
+│   ├── users.sql             # Individual INSERT INTO script for users
+│   ├── students.sql          # Individual INSERT INTO script for students
+│   └── ... (All 59 table data files)
+│
+├── tables/                   # 🔵 COMBINED SCHEMAS + DATA (Per table)
 │   ├── users.sql
 │   ├── students.sql
-│   ├── activities.sql
-│   ├── attendance.sql
-│   └── ... (all 59 tables)
-└── README.md                 # Database documentation & table index
+│   └── ... (All 59 full table files)
+│
+├── 00_ALL_TABLE_SCHEMAS.sql  # Complete Database DDL (All CREATE TABLE queries)
+├── 00_ALL_TABLE_DATA.sql     # Complete Database DML (All INSERT INTO records)
+├── Dump20260806.sql          # Full Database Dump Backup
+└── README.md                 # Database documentation & table dictionary
 ```
 
 ---
@@ -110,28 +121,18 @@ The 59 tables in the `spdms_lab` database are organized into the following funct
 
 ## 🛠️ How to Restore the Database
 
-### Option 1: Full Restore via Command Line
-```bash
-# 1. Create target database
-mysql -u root -p -e "CREATE DATABASE IF NOT EXISTS spdms_lab;"
-
-# 2. Import complete dump
-mysql -u root -p spdms_lab < Dump20260806.sql
-```
-
-### Option 2: Restore Schema Only (No Data)
+### Option 1: Restore Pure Schema DDL Only (No Data)
 ```bash
 mysql -u root -p spdms_lab < 00_ALL_TABLE_SCHEMAS.sql
 ```
 
-### Option 3: Restore Data Only
+### Option 2: Full Restore via Command Line (Schema + Data)
 ```bash
-mysql -u root -p spdms_lab < 00_ALL_TABLE_DATA.sql
+mysql -u root -p spdms_lab < Dump20260806.sql
 ```
 
-### Option 4: Restore via MySQL Workbench
-1. Open **MySQL Workbench** and connect to your database server.
-2. Go to **Server** -> **Data Import**.
-3. Select **Import from Self-Contained File** and browse to `Dump20260806.sql`.
-4. Set Default Target Schema to `spdms_lab`.
-5. Click **Start Import**.
+### Option 3: Restore Specific Table Schema
+```bash
+# Example: Restore users table DDL schema only
+mysql -u root -p spdms_lab < schemas/users.sql
+```

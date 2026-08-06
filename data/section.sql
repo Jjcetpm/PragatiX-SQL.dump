@@ -1,0 +1,8 @@
+USE `spdms_lab`;
+
+-- Data DML for table `section`
+LOCK TABLES `section` WRITE;
+/*!40000 ALTER TABLE `section` DISABLE KEYS */;
+INSERT INTO `section` VALUES (47,8,'A','2026-07-13 11:10:34','2026-07-13 11:10:34'),(48,8,'B','2026-07-13 11:10:40','2026-07-13 11:10:40'),(49,13,'A','2026-07-13 11:15:16','2026-07-13 11:15:16'),(56,30,'Test_value_721d','2026-08-03 17:14:12','2026-08-03 17:14:12');
+/*!40000 ALTER TABLE `section` ENABLE KEYS */;
+UNLOCK TABLES;

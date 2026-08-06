@@ -27,9 +27,15 @@ SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '40f6e646-751f-11f1-b2ea-341a4d76bf6e:1-
 c2d99e25-331a-11f1-a374-341a4d76bf6e:1-229';
 
 --
--- Table structure for table `academic_holiday`
---
 
+
+-- ==========================================
+-- ALL TABLE SCHEMAS (DDL ONLY)
+-- ==========================================
+
+USE `spdms_lab`;
+
+-- Schema DDL for table `academic_holiday`
 DROP TABLE IF EXISTS `academic_holiday`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -42,17 +48,11 @@ CREATE TABLE `academic_holiday` (
   KEY `FKpkyjlle225v8tu8nu8hohby6o` (`academic_month_id`),
   CONSTRAINT `FKpkyjlle225v8tu8nu8hohby6o` FOREIGN KEY (`academic_month_id`) REFERENCES `academic_month` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `academic_holiday`
---
 
 
---
--- Table structure for table `academic_month`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `academic_month`
 DROP TABLE IF EXISTS `academic_month`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -65,17 +65,11 @@ CREATE TABLE `academic_month` (
   `academic_year_enum` enum('FIRST_YEAR','FOURTH_YEAR','SECOND_YEAR','THIRD_YEAR') NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `academic_month`
---
 
 
---
--- Table structure for table `academic_week`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `academic_week`
 DROP TABLE IF EXISTS `academic_week`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -89,17 +83,11 @@ CREATE TABLE `academic_week` (
   KEY `FKo4fja4rpe0m44rdyg4xyy7hjf` (`academic_month_id`),
   CONSTRAINT `FKo4fja4rpe0m44rdyg4xyy7hjf` FOREIGN KEY (`academic_month_id`) REFERENCES `academic_month` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `academic_week`
---
 
 
---
--- Table structure for table `academic_years`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `academic_years`
 DROP TABLE IF EXISTS `academic_years`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -114,17 +102,11 @@ CREATE TABLE `academic_years` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `academic_year` (`academic_year`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `academic_years`
---
 
 
---
--- Table structure for table `activities`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `activities`
 DROP TABLE IF EXISTS `activities`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -188,17 +170,11 @@ CREATE TABLE `activities` (
   CONSTRAINT `activities_ibfk_2` FOREIGN KEY (`stage_id`) REFERENCES `activity_stages` (`id`),
   CONSTRAINT `FK7sdf72jxqeia9stse1x05o1mq` FOREIGN KEY (`subgroup_id`) REFERENCES `activity_subgroups` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `activities`
---
 
 
---
--- Table structure for table `activity_assignments`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `activity_assignments`
 DROP TABLE IF EXISTS `activity_assignments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -234,17 +210,11 @@ CREATE TABLE `activity_assignments` (
   CONSTRAINT `FKs6rb1fk0d3b4fmrpjs6ka2i4q` FOREIGN KEY (`assigned_by_id`) REFERENCES `users` (`id`),
   CONSTRAINT `FKs7l7yvgwwafjp00ii2yamsndp` FOREIGN KEY (`department_id`) REFERENCES `departments` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=885 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `activity_assignments`
---
 
 
---
--- Table structure for table `activity_categories`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `activity_categories`
 DROP TABLE IF EXISTS `activity_categories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -256,17 +226,11 @@ CREATE TABLE `activity_categories` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `activity_name` (`activity_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `activity_categories`
---
 
 
---
--- Table structure for table `activity_completion_requests`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `activity_completion_requests`
 DROP TABLE IF EXISTS `activity_completion_requests`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -294,17 +258,11 @@ CREATE TABLE `activity_completion_requests` (
   CONSTRAINT `fk_acr_student` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`),
   CONSTRAINT `fk_acr_team` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `activity_completion_requests`
---
 
 
---
--- Table structure for table `activity_stage_mappings`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `activity_stage_mappings`
 DROP TABLE IF EXISTS `activity_stage_mappings`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -329,17 +287,11 @@ CREATE TABLE `activity_stage_mappings` (
   CONSTRAINT `FKl4jjroqh5ffcxbcnyf6y4s374` FOREIGN KEY (`subgroup_id`) REFERENCES `activity_subgroups` (`id`),
   CONSTRAINT `FKrrtriom1ji8mf8ojvds2d2gsn` FOREIGN KEY (`stage_id`) REFERENCES `activity_stages` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `activity_stage_mappings`
---
 
 
---
--- Table structure for table `activity_stages`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `activity_stages`
 DROP TABLE IF EXISTS `activity_stages`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -369,17 +321,11 @@ CREATE TABLE `activity_stages` (
   UNIQUE KEY `uq_stage_name_year` (`stage_name`,`academic_year`),
   UNIQUE KEY `uq_name_year` (`name`,`academic_year`)
 ) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `activity_stages`
---
 
 
---
--- Table structure for table `activity_subgroups`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `activity_subgroups`
 DROP TABLE IF EXISTS `activity_subgroups`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -399,17 +345,11 @@ CREATE TABLE `activity_subgroups` (
   CONSTRAINT `FK7wnk9awbww7qjslomg21f7hrm` FOREIGN KEY (`stage_id`) REFERENCES `activity_stages` (`id`),
   CONSTRAINT `FKgvax9c9kfqxfvdjpago66nr8a` FOREIGN KEY (`assigned_department_id`) REFERENCES `departments` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `activity_subgroups`
---
 
 
---
--- Table structure for table `alternate_working_day`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `alternate_working_day`
 DROP TABLE IF EXISTS `alternate_working_day`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -427,17 +367,11 @@ CREATE TABLE `alternate_working_day` (
   KEY `FKhhql9tdp4yqtibhjbqt1or8kp` (`academic_calendar_month_id`),
   CONSTRAINT `FKhhql9tdp4yqtibhjbqt1or8kp` FOREIGN KEY (`academic_calendar_month_id`) REFERENCES `academic_month` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `alternate_working_day`
---
 
 
---
--- Table structure for table `attendance`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `attendance`
 DROP TABLE IF EXISTS `attendance`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -462,17 +396,11 @@ CREATE TABLE `attendance` (
   CONSTRAINT `fk_attendance_student` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`),
   CONSTRAINT `FKcjg1qkkmmy4dtktcdug457x4p` FOREIGN KEY (`subject_id`) REFERENCES `subjects` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1537 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `attendance`
---
 
 
---
--- Table structure for table `attendance_holiday`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `attendance_holiday`
 DROP TABLE IF EXISTS `attendance_holiday`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -484,17 +412,11 @@ CREATE TABLE `attendance_holiday` (
   `updated_at` datetime(6) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `attendance_holiday`
---
 
 
---
--- Table structure for table `attendance_records`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `attendance_records`
 DROP TABLE IF EXISTS `attendance_records`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -511,17 +433,11 @@ CREATE TABLE `attendance_records` (
   CONSTRAINT `FKb5ijilkgrgx66qn66iajdkyb9` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`),
   CONSTRAINT `FKbeajy0xxweanmk3g7aujtf5bj` FOREIGN KEY (`attendance_session_id`) REFERENCES `attendance_sessions` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `attendance_records`
---
 
 
---
--- Table structure for table `attendance_sessions`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `attendance_sessions`
 DROP TABLE IF EXISTS `attendance_sessions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -548,17 +464,11 @@ CREATE TABLE `attendance_sessions` (
   CONSTRAINT `FKpcs7hgdua629c9s4x702j0sp2` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`),
   CONSTRAINT `FKpnjo169km7kmsfh5t60do9vyh` FOREIGN KEY (`teacher_id`) REFERENCES `faculty` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `attendance_sessions`
---
 
 
---
--- Table structure for table `attendance_settings`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `attendance_settings`
 DROP TABLE IF EXISTS `attendance_settings`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -591,17 +501,11 @@ CREATE TABLE `attendance_settings` (
   `start_date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `attendance_settings`
---
 
 
---
--- Table structure for table `badge_requests`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `badge_requests`
 DROP TABLE IF EXISTS `badge_requests`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -627,17 +531,11 @@ CREATE TABLE `badge_requests` (
   CONSTRAINT `FK7wb98rahkhgh7bgbvqh5ka2iw` FOREIGN KEY (`department_id`) REFERENCES `departments` (`id`),
   CONSTRAINT `FKt3g2npskagiy54ujcokkt8krq` FOREIGN KEY (`badge_id`) REFERENCES `badges` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `badge_requests`
---
 
 
---
--- Table structure for table `badges`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `badges`
 DROP TABLE IF EXISTS `badges`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -653,17 +551,11 @@ CREATE TABLE `badges` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `UKcuebofvgkgi4g9fxde2kmpr1h` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `badges`
---
 
 
---
--- Table structure for table `captain_reward_settings`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `captain_reward_settings`
 DROP TABLE IF EXISTS `captain_reward_settings`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -678,17 +570,11 @@ CREATE TABLE `captain_reward_settings` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `UKlc1wugw65da78hx2cajtqtx9w` (`academic_year`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `captain_reward_settings`
---
 
 
---
--- Table structure for table `custom_frequencies`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `custom_frequencies`
 DROP TABLE IF EXISTS `custom_frequencies`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -702,17 +588,11 @@ CREATE TABLE `custom_frequencies` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `UKdwvgfonmejvccbcv17imp17ws` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `custom_frequencies`
---
 
 
---
--- Table structure for table `departments`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `departments`
 DROP TABLE IF EXISTS `departments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -730,17 +610,11 @@ CREATE TABLE `departments` (
   UNIQUE KEY `dept_name` (`dept_name`),
   UNIQUE KEY `UKj6cwks7xecs5jov19ro8ge3qk` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `departments`
---
 
 
---
--- Table structure for table `discipline_logs`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `discipline_logs`
 DROP TABLE IF EXISTS `discipline_logs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -772,17 +646,11 @@ CREATE TABLE `discipline_logs` (
   CONSTRAINT `FKa7a329hsf527p0l61x9pog303` FOREIGN KEY (`reg_no`) REFERENCES `students` (`id`),
   CONSTRAINT `FKq1in7t2kuukg1xilj2i92bm2g` FOREIGN KEY (`recorded_by_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `discipline_logs`
---
 
 
---
--- Table structure for table `faculty`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `faculty`
 DROP TABLE IF EXISTS `faculty`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -803,17 +671,11 @@ CREATE TABLE `faculty` (
   CONSTRAINT `faculty_ibfk_2` FOREIGN KEY (`dept_id`) REFERENCES `departments` (`id`),
   CONSTRAINT `fk_section_id` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `faculty`
---
 
 
---
--- Table structure for table `genders`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `genders`
 DROP TABLE IF EXISTS `genders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -825,17 +687,11 @@ CREATE TABLE `genders` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `gender_name` (`gender_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=187 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `genders`
---
 
 
---
--- Table structure for table `group_deletion_audit_log`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `group_deletion_audit_log`
 DROP TABLE IF EXISTS `group_deletion_audit_log`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -849,17 +705,11 @@ CREATE TABLE `group_deletion_audit_log` (
   `timestamp` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `group_deletion_audit_log`
---
 
 
---
--- Table structure for table `group_members`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `group_members`
 DROP TABLE IF EXISTS `group_members`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -874,17 +724,11 @@ CREATE TABLE `group_members` (
   CONSTRAINT `FK3au16gnt2ywalakrslk2vhxj9` FOREIGN KEY (`group_id`) REFERENCES `students_group` (`id`),
   CONSTRAINT `FKriqbhx06deaevh9o051g4fo95` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `group_members`
---
 
 
---
--- Table structure for table `groups`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `groups`
 DROP TABLE IF EXISTS `groups`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -896,17 +740,11 @@ CREATE TABLE `groups` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `UKqcvyixaqvy6a1e3haycgy0nja` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `groups`
---
 
 
---
--- Table structure for table `levels`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `levels`
 DROP TABLE IF EXISTS `levels`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -922,17 +760,11 @@ CREATE TABLE `levels` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `UKli0eoqvxan7eauih6cmj751i1` (`level_number`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `levels`
---
 
 
---
--- Table structure for table `mission_submissions`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `mission_submissions`
 DROP TABLE IF EXISTS `mission_submissions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -951,17 +783,11 @@ CREATE TABLE `mission_submissions` (
   CONSTRAINT `FKdiekhr3skruynrind97ticy4k` FOREIGN KEY (`mission_id`) REFERENCES `missions` (`id`),
   CONSTRAINT `FKdwdtk0amkvmdqxowtub3xymuo` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `mission_submissions`
---
 
 
---
--- Table structure for table `missions`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `missions`
 DROP TABLE IF EXISTS `missions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -980,17 +806,11 @@ CREATE TABLE `missions` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `UKbx3v7rkjab75f45nwtrexl0jl` (`task_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `missions`
---
 
 
---
--- Table structure for table `notifications`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `notifications`
 DROP TABLE IF EXISTS `notifications`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1015,17 +835,11 @@ CREATE TABLE `notifications` (
   CONSTRAINT `FKoipcyap04c4x2f0vao2s5drpu` FOREIGN KEY (`reg_no`) REFERENCES `students` (`id`),
   CONSTRAINT `notifications_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=952 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `notifications`
---
 
 
---
--- Table structure for table `penalty_requests`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `penalty_requests`
 DROP TABLE IF EXISTS `penalty_requests`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1056,17 +870,11 @@ CREATE TABLE `penalty_requests` (
   CONSTRAINT `FKqphr3ibe5nsn2dq1j9kamrfku` FOREIGN KEY (`teacher_id`) REFERENCES `users` (`id`),
   CONSTRAINT `FKs86j9i2prb9a66hubxfn5pt67` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `penalty_requests`
---
 
 
---
--- Table structure for table `roles`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `roles`
 DROP TABLE IF EXISTS `roles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1078,17 +886,11 @@ CREATE TABLE `roles` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `roles`
---
 
 
---
--- Table structure for table `section`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `section`
 DROP TABLE IF EXISTS `section`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1102,17 +904,11 @@ CREATE TABLE `section` (
   UNIQUE KEY `uq_department_section` (`dept_id`,`section_name`),
   CONSTRAINT `fk_section_department` FOREIGN KEY (`dept_id`) REFERENCES `departments` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `section`
---
 
 
---
--- Table structure for table `semesters`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `semesters`
 DROP TABLE IF EXISTS `semesters`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1126,17 +922,11 @@ CREATE TABLE `semesters` (
   UNIQUE KEY `semester_no` (`semester_no`),
   UNIQUE KEY `uq_semester_name` (`semester_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `semesters`
---
 
 
---
--- Table structure for table `sms_notifications`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `sms_notifications`
 DROP TABLE IF EXISTS `sms_notifications`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1152,17 +942,11 @@ CREATE TABLE `sms_notifications` (
   `twilio_sid` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `sms_notifications`
---
 
 
---
--- Table structure for table `stage_activity_mappings`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `stage_activity_mappings`
 DROP TABLE IF EXISTS `stage_activity_mappings`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1178,17 +962,11 @@ CREATE TABLE `stage_activity_mappings` (
   CONSTRAINT `FK2dg4wbp42gll5gnoqq39fh6v` FOREIGN KEY (`stage_id`) REFERENCES `activity_stages` (`id`),
   CONSTRAINT `FKop038fc85aolfs45a0dv8uod6` FOREIGN KEY (`activity_id`) REFERENCES `activities` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `stage_activity_mappings`
---
 
 
---
--- Table structure for table `stage_teams`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `stage_teams`
 DROP TABLE IF EXISTS `stage_teams`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1208,17 +986,11 @@ CREATE TABLE `stage_teams` (
   CONSTRAINT `FKjn8oms5hngw5t7h4uq5q5vakp` FOREIGN KEY (`captain_id`) REFERENCES `students` (`id`),
   CONSTRAINT `FKtoym937dpt8rd4k4088pal1ld` FOREIGN KEY (`vice_captain_id`) REFERENCES `students` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `stage_teams`
---
 
 
---
--- Table structure for table `streaks`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `streaks`
 DROP TABLE IF EXISTS `streaks`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1236,17 +1008,11 @@ CREATE TABLE `streaks` (
   KEY `FKgs4huer1l3h459838yihayxqx` (`reg_no`),
   CONSTRAINT `FKehg7pdbwrdqkiq17jnqowqwg5` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `streaks`
---
 
 
---
--- Table structure for table `student_activity_streaks`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `student_activity_streaks`
 DROP TABLE IF EXISTS `student_activity_streaks`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1265,17 +1031,11 @@ CREATE TABLE `student_activity_streaks` (
   CONSTRAINT `FKpjweg58rirwvsqi281ic3kul5` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`),
   CONSTRAINT `FKs157a0pqlp91rv6rx1oha2t1k` FOREIGN KEY (`activity_id`) REFERENCES `activities` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `student_activity_streaks`
---
 
 
---
--- Table structure for table `student_activity_xp`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `student_activity_xp`
 DROP TABLE IF EXISTS `student_activity_xp`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1300,17 +1060,11 @@ CREATE TABLE `student_activity_xp` (
   CONSTRAINT `FKqpniaf47k9cc8bmqmi4jkokt3` FOREIGN KEY (`teacher_id`) REFERENCES `users` (`id`),
   CONSTRAINT `FKsjhq1ffk9cbkch5bnvom9aypr` FOREIGN KEY (`activity_id`) REFERENCES `activities` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `student_activity_xp`
---
 
 
---
--- Table structure for table `student_badges`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `student_badges`
 DROP TABLE IF EXISTS `student_badges`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1328,17 +1082,11 @@ CREATE TABLE `student_badges` (
   CONSTRAINT `FKdogjuytddp97f0p6ivt3r8ufp` FOREIGN KEY (`badge_id`) REFERENCES `badges` (`id`),
   CONSTRAINT `FKtciahqu1w23ccrula5smx9i73` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `student_badges`
---
 
 
---
--- Table structure for table `student_guardians`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `student_guardians`
 DROP TABLE IF EXISTS `student_guardians`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1359,17 +1107,11 @@ CREATE TABLE `student_guardians` (
   KEY `idx_guardian_student` (`student_id`),
   CONSTRAINT `fk_guardian_student` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `student_guardians`
---
 
 
---
--- Table structure for table `student_points_history`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `student_points_history`
 DROP TABLE IF EXISTS `student_points_history`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1395,17 +1137,11 @@ CREATE TABLE `student_points_history` (
   CONSTRAINT `student_points_history_ibfk_2` FOREIGN KEY (`activity_id`) REFERENCES `activities` (`id`),
   CONSTRAINT `student_points_history_ibfk_3` FOREIGN KEY (`log_id`) REFERENCES `discipline_logs` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `student_points_history`
---
 
 
---
--- Table structure for table `students`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `students`
 DROP TABLE IF EXISTS `students`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1472,17 +1208,11 @@ CREATE TABLE `students` (
   CONSTRAINT `FKjgyxg2x86o4me9gr70elinthr` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`),
   CONSTRAINT `students_ibfk_1` FOREIGN KEY (`department_id`) REFERENCES `departments` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=338 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `students`
---
 
 
---
--- Table structure for table `students_group`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `students_group`
 DROP TABLE IF EXISTS `students_group`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1499,17 +1229,11 @@ CREATE TABLE `students_group` (
   CONSTRAINT `FKj47s3n0afrqp3i2jcxsukp2ha` FOREIGN KEY (`dept_id`) REFERENCES `departments` (`id`),
   CONSTRAINT `chk_group_size` CHECK ((`max_size` > 0))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `students_group`
---
 
 
---
--- Table structure for table `sub_roles`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `sub_roles`
 DROP TABLE IF EXISTS `sub_roles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1523,17 +1247,11 @@ CREATE TABLE `sub_roles` (
   KEY `sub_roles_ibfk_1` (`role_id`),
   CONSTRAINT `sub_roles_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `sub_roles`
---
 
 
---
--- Table structure for table `subjects`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `subjects`
 DROP TABLE IF EXISTS `subjects`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1551,17 +1269,11 @@ CREATE TABLE `subjects` (
   UNIQUE KEY `uq_subject_name` (`dept_id`,`sub_name`),
   CONSTRAINT `subjects_ibfk_1` FOREIGN KEY (`dept_id`) REFERENCES `departments` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `subjects`
---
 
 
---
--- Table structure for table `team_members`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `team_members`
 DROP TABLE IF EXISTS `team_members`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1580,17 +1292,11 @@ CREATE TABLE `team_members` (
   CONSTRAINT `FKtgca08el3ofisywcf11f0f76t` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`),
   CONSTRAINT `team_members_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `team_members`
---
 
 
---
--- Table structure for table `team_removal_requests`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `team_removal_requests`
 DROP TABLE IF EXISTS `team_removal_requests`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1613,17 +1319,11 @@ CREATE TABLE `team_removal_requests` (
   CONSTRAINT `FK8siu2o6r727x6co4ahugdf3wo` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`),
   CONSTRAINT `FKgpv2t0mhgoinelie9tqoi38ic` FOREIGN KEY (`reg_no`) REFERENCES `students` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `team_removal_requests`
---
 
 
---
--- Table structure for table `teams`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `teams`
 DROP TABLE IF EXISTS `teams`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1655,17 +1355,11 @@ CREATE TABLE `teams` (
   CONSTRAINT `FKi382pmjr988ro4g3t2c08h1hd` FOREIGN KEY (`assignment_id`) REFERENCES `activity_assignments` (`id`),
   CONSTRAINT `FKkteyamwleykiqb2nv0cu2fc3r` FOREIGN KEY (`department_id`) REFERENCES `departments` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=135 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `teams`
---
 
 
---
--- Table structure for table `timetable`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `timetable`
 DROP TABLE IF EXISTS `timetable`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1694,17 +1388,11 @@ CREATE TABLE `timetable` (
   CONSTRAINT `FKlwqgafdl0hrmeg548uarkrbvi` FOREIGN KEY (`semester_id`) REFERENCES `semesters` (`id`),
   CONSTRAINT `FKog52wc8yod6g56621vygalt2f` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `timetable`
---
 
 
---
--- Table structure for table `timetable_entries`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `timetable_entries`
 DROP TABLE IF EXISTS `timetable_entries`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1725,17 +1413,11 @@ CREATE TABLE `timetable_entries` (
   CONSTRAINT `FKi8jv4d492h85hygx2v35aytjh` FOREIGN KEY (`subject_id`) REFERENCES `subjects` (`id`),
   CONSTRAINT `FKj61690mwftwguyahrgmv692ku` FOREIGN KEY (`faculty_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `timetable_entries`
---
 
 
---
--- Table structure for table `user_roles`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `user_roles`
 DROP TABLE IF EXISTS `user_roles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1747,17 +1429,11 @@ CREATE TABLE `user_roles` (
   CONSTRAINT `user_roles_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   CONSTRAINT `user_roles_ibfk_2` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user_roles`
---
 
 
---
--- Table structure for table `user_sub_roles`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `user_sub_roles`
 DROP TABLE IF EXISTS `user_sub_roles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1769,17 +1445,11 @@ CREATE TABLE `user_sub_roles` (
   CONSTRAINT `user_sub_roles_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   CONSTRAINT `user_sub_roles_ibfk_2` FOREIGN KEY (`sub_role_id`) REFERENCES `sub_roles` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user_sub_roles`
---
 
 
---
--- Table structure for table `users`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `users`
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1807,17 +1477,11 @@ CREATE TABLE `users` (
   CONSTRAINT `fk_user_section` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`),
   CONSTRAINT `FKsbg59w8q63i0oo53rlgvlcnjq` FOREIGN KEY (`department_id`) REFERENCES `departments` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=119 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `users`
---
 
 
---
--- Table structure for table `xp_transactions`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `xp_transactions`
 DROP TABLE IF EXISTS `xp_transactions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1841,17 +1505,11 @@ CREATE TABLE `xp_transactions` (
   CONSTRAINT `FK1qh1hd5r941kikty3go7isxj9` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`),
   CONSTRAINT `FKgs7fmfhhyews0ls3yurpvbsgh` FOREIGN KEY (`activity_id`) REFERENCES `activities` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `xp_transactions`
---
 
 
---
--- Table structure for table `years`
---
+USE `spdms_lab`;
 
+-- Schema DDL for table `years`
 DROP TABLE IF EXISTS `years`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -1865,21 +1523,3 @@ CREATE TABLE `years` (
   UNIQUE KEY `year_no` (`year_no`),
   UNIQUE KEY `uq_year_name` (`year_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `years`
---
-
-SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2026-08-06 19:24:07
