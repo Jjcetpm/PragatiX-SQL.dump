@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `spdms_lab` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `spdms_lab`;
+CREATE DATABASE  IF NOT EXISTS `pragatix` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `pragatix`;
 -- MySQL dump 10.13  Distrib 8.0.46, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: spdms_lab
@@ -23,8 +23,6 @@ SET @@SESSION.SQL_LOG_BIN= 0;
 -- GTID state at the beginning of the backup 
 --
 
-SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '40f6e646-751f-11f1-b2ea-341a4d76bf6e:1-21063,
-c2d99e25-331a-11f1-a374-341a4d76bf6e:1-229';
 
 --
 -- Table structure for table `academic_holiday`
